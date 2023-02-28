@@ -2,9 +2,10 @@ package com.crunch;
 
 import java.util.Comparator;
 
-class RadishColorComparator implements Comparator <Radish> {
+class RadishColorComparator implements Comparator<Radish> {
+
     @Override
-    public int compare(Radish r1, Radish r2) {
-        return r1.getColor().compareTo(r2.getColor());
+    public int compare(Radish radish1, Radish radish2) {
+        return radish1.getColor().compareTo(radish2.getColor());
     }
 }

@@ -1,40 +1,35 @@
 package com.entertainment.client;
 
 import com.entertainment.Television;
-
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 class TelevisionClient {
+
     public static void main(String[] args) {
-//        Television tv1 = new Television();
-//        Television tv2 = new Television( "RCA", 10);
-//        System.out.println(tv1);
-//        System.out.println(tv2);
-//
-//        tv2.changeChannel(6);
-//        System.out.println(tv2);
-
+        // compare behavior of == and equals()
         Television tvA = new Television("Sony", 50);
-        Television tvB = new Television("LG", 52);
-        System.out.println("tva == tvb:" + (tvA == tvB));
-        System.out.println("tvA.equals(tvB): " + tvA.equals(tvB));
+        Television tvB = new Television("Sony", 50);
 
-        System.out.println(tvA.hashCode()); //54
-        System.out.println(tvB.hashCode()); //54
+        System.out.println("tvA == tvB: "       + (tvA == tvB));        // always false
+        System.out.println("tvA.equals(tvB): "  + tvA.equals(tvB));     // true now!
 
-        //Let's create a Set<Television> and see what happens
-        Set<Television> tvs = new HashSet<>();
+        // System.out.println(tvA.hashCode());
+        // System.out.println(tvB.hashCode());
+
+        Television tvC = new Television("Samsung", 47);
+        Television tvD = new Television("LG", 52);
+
+        // let's create a Set<Television> and see what happens
+        Set<Television> tvs = new TreeSet<>();
         tvs.add(tvA);
-        tvs.add(tvB); // should be rejected as a "duplicate"
+        tvs.add(tvB);
+        tvs.add(tvC);
+        tvs.add(tvD);
 
-        //The size of the Set should be 1
+        // the size of the Set should be 1, because tvB is rejected as a duplicate
         System.out.println("The size of the Set is: " + tvs.size());
-
+        
     }
-//fields
-//constructor
-//business method
-//helper method
-//accessor method get/set/toString
 }

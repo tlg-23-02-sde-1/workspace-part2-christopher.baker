@@ -1,14 +1,13 @@
 package com.crunch;
 
-
-class Radish implements Comparable <Radish> {
+/*
+ * Natural order is determined by 'size' (double).
+ */
+class Radish implements Comparable<Radish> {
     private String color;
     private double size;
     private double tailLength;
     private int sprouts;
-
-//fields
-//constructor
 
     public Radish(String color, double size, double tailLength, int sprouts) {
         setColor(color);
@@ -16,10 +15,6 @@ class Radish implements Comparable <Radish> {
         setTailLength(tailLength);
         setSprouts(sprouts);
     }
-
-//business method
-//helper method
-//accessor method get/set/toString
 
     public String getColor() {
         return color;
@@ -59,9 +54,8 @@ class Radish implements Comparable <Radish> {
     }
 
     @Override
-    public String toString () {
+    public String toString() {
         return String.format("%s: color=%s, size=%s, tailLength=%s, sprouts=%s",
                 getClass().getSimpleName(), getColor(), getSize(), getTailLength(), getSprouts());
     }
-
 }
