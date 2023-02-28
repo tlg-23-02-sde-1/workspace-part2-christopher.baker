@@ -43,12 +43,24 @@ public class Television {
     }
 
     @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Television that = (Television) obj;
+        return this.getVolume() == that.getVolume() &&
+                Objects.equals(getBrand(), that.getBrand());
+    }
+
+    @Override
     public int hashCode(){  // this is a poorly written function due to easily resulting in "hash collision"
-                            // a "hash collision" is when different objects (by equals()) has the SAME hashCode.
+        // a "hash collision" is when different objects (by equals()) has the SAME hashCode.
         return Objects.hash(getBrand(), getVolume());
     }
 
     public boolean equals(Television obj){
+
         boolean result = false;
 
         //proceed only if 'obj' is really a reference to a Television object.
