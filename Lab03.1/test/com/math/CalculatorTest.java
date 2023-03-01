@@ -8,12 +8,34 @@
  */
 package com.math;
 
-import org.junit.Test;
+import org.junit.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class CalculatorTest {
+    private Calculator calc;
+
+    @BeforeClass
+    public static void initializeEntireTestRun(){
+        System.out.println("initializeEntireTestRun");
+    }
+    @AfterClass
+    public static void finalizeTestRun(){
+        System.out.println("finalizeTestRun");
+    }
+
+    @Before
+    public void setUp(){
+        System.out.println("setUp");
+        calc = new Calculator();
+    }
+
+    @After
+    public void tearDown(){
+        System.out.println("tearDown");
+        calc = new Calculator();
+    }
 
     @Test
     public void testAdd() {
