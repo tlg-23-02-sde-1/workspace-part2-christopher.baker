@@ -100,23 +100,24 @@ public class TelevisionTest {
         assertEquals(999, tv1.getCurrentChannel());
     }
 
-    @Test
-    public void changeChannel_shouldStoreValue_whenInvalid_upperBound() {
+    @Test(expected=InvalidChannelException.class)
+    public void changeChannel_shouldStoreValue_whenInvalid_upperBound() throws InvalidChannelException {
         try {tv1.changeChannel(1000);
             fail("Should have thrown InvalidChannelException");
         }
         catch (InvalidChannelException e){
             assertEquals("Invalid channel: 1000. Allowed range: [1,999].", e.getMessage());
+            throw e;
         }
     }
 
-    @Test
+    @Test(expected=IllegalArgumentException.class)
     public void setVolume_shouldThrowIllegalArgumentException_whenInvalid_lowerBound() {
         tv1.setVolume(-1); //should trigger an exception and doesn't get caught
     }
 
     @Test
-    public void setVolume_shouldStoreValue_whenValid_lowerBound() {
+    public void setVolume_shouldStoreValue_whenValid_lowerBound() { //setVolume is unchecked so we don't need throws Exception
         tv1.setVolume(0);
         assertEquals(0, tv1.getVolume());
     }
@@ -127,7 +128,7 @@ public class TelevisionTest {
         assertEquals(100, tv1.getVolume());
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void setVolume_shouldThrowIllegalArgumentException_whenInvalid_upperBound() {
         tv1.setVolume(101);
     }
