@@ -1,6 +1,7 @@
 package com.duckrace;
 
 import java.util.List;
+
 import static com.duckrace.Reward.*;  // OK to use * for static imports
 
 class DuckRacerTest {

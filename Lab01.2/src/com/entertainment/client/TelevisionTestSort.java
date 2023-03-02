@@ -10,6 +10,7 @@ package com.entertainment.client;
 
 import java.util.Arrays;
 import java.util.List;
+
 import com.entertainment.Television;
 import com.entertainment.TelevisionBrandChannelComparator;
 import com.entertainment.TelevisionChannelComparator;
@@ -34,7 +35,7 @@ public class TelevisionTestSort {
 
         System.out.println("Sorted by channel");
         for (Television tv : tvList) {
-          System.out.println(tv);
+            System.out.println(tv);
         }
         System.out.println();
 

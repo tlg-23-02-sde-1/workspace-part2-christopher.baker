@@ -8,8 +8,8 @@ import java.util.List;
 class DuckRacer {
     // fields or instance variables
     private final int id;
-    private String name;
     private final List<Reward> rewards = new ArrayList<>();
+    private String name;
 
     // constructors
     public DuckRacer(int id, String name) {
