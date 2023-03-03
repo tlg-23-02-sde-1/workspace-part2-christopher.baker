@@ -8,10 +8,8 @@
 
 package com.javatunes.catalog;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 // OF COURSE THIS CLASS DOESN'T COMPILE
 // Your first job is to fulfill the contract that this class has signed.
@@ -42,36 +40,27 @@ public class InMemoryCatalog implements Catalog {
     // Interface methods required by the Catalog "contract."
 
     @Override
-    public MusicItem findById(Long id) {  // let's say a 12 came in here
-        // declare return value
-        MusicItem result = null;
-
-        // iterate over 'catalogData', asking each one if it has the provided id
-        for (MusicItem item : catalogData) {
-            if (item.getId().equals(id)) {  // we found it
-                result = item;
-                break;
-            }
-        }
-        return result;
+    public MusicItem findById(Long id) {
+        return catalogData.stream()
+                .filter(MusicItem -> MusicItem.getId().equals(id))
+                .findFirst()
+                .orElse(null);
     }
 
     @Override
     public Collection<MusicItem> findByKeyword(String keyword) {
-        return null;
+        return catalogData.stream()
+                .filter(MusicItem -> MusicItem.getTitle().equalsIgnoreCase(keyword) || MusicItem.getArtist().equalsIgnoreCase(keyword))
+                .collect(Collectors.toList());
     }
 
     @Override
-    public Collection<MusicItem> findByCategory(MusicCategory category) {  // say it's POP
+    public Collection<MusicItem> findByCategory(MusicCategory category) {
+        // say it's POP
         // declare return value, a holding area for matches
-        Collection<MusicItem> result = new ArrayList<>();
-
-        for (MusicItem item : catalogData) {
-            if (item.getMusicCategory().equals(category)) {
-                result.add(item);
-            }
-        }
-        return result;
+        return catalogData.stream()
+                .filter(MusicItem -> MusicItem.getMusicCategory().equals(category))
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -112,86 +101,110 @@ public class InMemoryCatalog implements Catalog {
      * For example, Madonna's first album is simply titled, "Madonna."
      */
     public Collection<MusicItem> findSelfTitled() {
-        Collection<MusicItem> result = new ArrayList<>();
-
-        return result;
+        return catalogData.stream()
+                .filter(MusicItem -> MusicItem.getArtist().equals(MusicItem.getTitle()))
+                .collect(Collectors.toList());
     }
-
 
     /**
      * TASK: find all "rock" items whose price is less than or equal to the specified price.
      */
     public Collection<MusicItem> findRockBottom(double maxPrice) {
-        Collection<MusicItem> result = new ArrayList<>();
-
-        return result;
+        return findByCategory(MusicCategory.ROCK).stream()
+                .filter(MusicItem -> MusicItem.getPrice() <= maxPrice)
+                .collect(Collectors.toList());
     }
-
 
     /**
      * TASK: how many items of the specified genre (MusicCategory) do we sell?
      */
     public int genreCount(MusicCategory category) {
-        int result = 0;
-
-        return result;
+        return findByCategory(category).size();
     }
-
 
     /**
      * TASK: determine average price of our low-cost, extensive catalog of music.
      */
     public double averageCost() {
-        double result = 0.0;
-
-        return result;
+        return catalogData.stream()
+                .mapToDouble(MusicItem::getPrice)
+                .average()
+                .orElse(0.0);
     }
-
 
     /**
      * TASK: find the cheapest item with the specified genre (MusicCategory).
      */
-
+    public MusicItem cheapestItemByGenre(MusicCategory category) {
+        return findByCategory(category).stream()
+                .min(Comparator.comparingDouble(MusicItem::getPrice))
+                .orElse(null);
+    }
 
     /**
      * TASK: find the average price of items in the specified genre (MusicCategory).
      */
-
+    public double averagePriceByGenre(MusicCategory category){
+        return findByCategory(category).stream()
+                .mapToDouble(MusicItem::getPrice)
+                .average()
+                .orElse(0.0);
+    }
 
     /**
      * TASK: are all items priced at least $10? (we'll not hard code it, client will specify)
      * This is a yes/no answer.
      */
     public boolean isAtLeast(double minPrice) {
-        boolean result = false;
-
-        return result;
+        return catalogData.stream()
+                .allMatch(MusicItem -> MusicItem.getPrice() >=minPrice);
     }
-
 
     /**
      * TASK: do we sell any items with the specified genre (MusicCategory)?
      * Another yes/no answer.
      */
-
+    public boolean isInInventory(MusicCategory category){
+        return findByCategory(category).stream()
+                .anyMatch(MusicItem -> MusicItem.getMusicCategory().equals(category));
+    }
 
     /**
      * TASK: find the titles of all "pop" items, sorted by natural order.
      * Just the titles!
      */
-
+    public Collection<String> getPopTitles(){
+        return findByCategory(MusicCategory.POP).stream()
+                .map(MusicItem::getTitle)
+                .sorted()
+                .collect(Collectors.toList());
+    }
 
     /**
      * TASK: find all items released in the 80s whose price is less than or equal to the specified price.
      */
-
+    public Collection<MusicItem> cheapAlbumsFromThe80s(double minPrice){
+        return catalogData.stream()
+                .filter(MusicItem -> MusicItem.getReleaseDate().toLocalDate().getYear() >= 1980 &&
+                        MusicItem.getReleaseDate().toLocalDate().getYear() <= 1989 &&
+                        MusicItem.getPrice() <= minPrice)
+                .collect(Collectors.toList());
+    }
 
     /**
      * TASK: return a map whose keys are all the genres (categories), and each key's associated value
      * is a collection of items in that genre.  If there is a genre that we don't currently
      * sell, that key's associated value should be an empty collection, not null.
      */
+    public Map<MusicCategory, Collection<MusicItem>> getCategoryMap() {
+        return Arrays.stream(MusicCategory.values())
+                .map(c -> Map.entry(c,findByCategory(c)))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+    }
 
+    public void dump(Collection<MusicItem> items){
+        items.forEach(System.out::println);
+    }
 
     @Override
     public String toString() {

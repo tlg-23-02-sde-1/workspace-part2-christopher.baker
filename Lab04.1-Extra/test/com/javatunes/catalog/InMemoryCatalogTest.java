@@ -1,70 +1,51 @@
-/*
- * This code is sample code, provided as-is, and we make no
- * warranties as to its correctness or suitability for any purpose.
- *
- * We hope that it's useful to you.  Enjoy.
- * Copyright LearningPatterns Inc.
- */
-
 package com.javatunes.catalog;
 
-import com.javatunes.catalog.InMemoryCatalog;
-import com.javatunes.catalog.MusicCategory;
-import com.javatunes.catalog.MusicItem;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
-class InMemoryCatalogTest {
+import static org.junit.Assert.*;
 
-    /*
-     * One by one, complete each test method below, and then "activate" it by
-     * uncommenting the call to that method in main().
-     *
-     * Once you see that the test method verifies the corresponding business method
-     * works correctly, you can comment out that call in main() and proceed to the next one.
-     */
-    public static void main(String[] args) {
-        // testFindById();
-        // testFindByKeyword();
-        // testFindByCategory();
-        // testSize();
-        // testGetAll();
+public class InMemoryCatalogTest {
+    private InMemoryCatalog catalog;
+
+    @Before
+    public void setUp(){
+        catalog = new InMemoryCatalog();
     }
 
-    private static void testFindById() {
-        InMemoryCatalog catalog = new InMemoryCatalog();
+    @Test
+    public void findSelfTitled_shouldReturnCorrectResult() {
+        Collection<MusicItem> items =catalog.findSelfTitled();
+        //size should be 2, id should be 6 and 7
+        assertEquals(2, items.size());
+        //I need to extract(get) the first one and make sure its id is 6, then the 2nd one
+        List<MusicItem> itemsList = new ArrayList<>(items);
+        itemsList.sort(null);
+        //assertEquals(6,itemsList.get(0));
+    }
 
+    @Test(expected=UnsupportedOperationException.class)
+    public void getAll_shouldReturnReadOnlyCollection() {
+        Collection<MusicItem> items = catalog.getAll();
+        items.clear(); // should trigger UnsupportedOperationException
+    }
+
+    @Test
+    public void findById_shouldReturnNull_whenIdNotFound() {
+        MusicItem item = catalog.findById(1000L);
+        assertNull(item);
+    }
+
+    @Test
+    public void findByID_shouldReturnMusicItemWithThatId_whenIdFound() {
         MusicItem item = catalog.findById(12L);
-        System.out.println(item);
+        assertEquals(12L, item.getId().longValue());
+        assertTrue(12 == item.getId());
 
-        MusicItem notFound = catalog.findById(1012L);
-        System.out.println(notFound);
-    }
-
-    private static void testFindByKeyword() {
-    }
-
-    private static void testFindByCategory() {
-        InMemoryCatalog catalog = new InMemoryCatalog();
-
-        Collection<MusicItem> items = catalog.findByCategory(MusicCategory.POP);
-        dump(items);
-    }
-
-    private static void testSize() {
-        InMemoryCatalog catalog = new InMemoryCatalog();
-        System.out.println(catalog.size());
-    }
-
-    private static void testGetAll() {
-        InMemoryCatalog catalog = new InMemoryCatalog();
-
-        Collection<MusicItem> allItems = catalog.getAll();
-        allItems.clear();  // UnsupportedOperationException
-    }
-
-    private static void dump(Collection<MusicItem> items) {
-        for (MusicItem item : items) {
-            System.out.println(item);
-        }
     }
 }
