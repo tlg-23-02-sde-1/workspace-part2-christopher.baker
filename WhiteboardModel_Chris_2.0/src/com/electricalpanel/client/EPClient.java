@@ -1,6 +1,8 @@
-package electricalpanel.client;
+package com.electricalpanel.client;
 
-import electricalpanel.*;
+import com.electricalpanel.EPBrand;
+import com.electricalpanel.ElectricalPanel;
+import com.electricalpanel.*;
 
 class EPClient {
     public static void main(String[] args) {

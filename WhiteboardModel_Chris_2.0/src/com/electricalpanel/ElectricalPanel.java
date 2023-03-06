@@ -1,4 +1,4 @@
-package electricalpanel;
+package com.electricalpanel;
 
 public class ElectricalPanel {
     //we only want to accept even num of slots
