@@ -1,9 +1,7 @@
-package com.electricalpanel.client;
+package electricalpanel.client;
 
-import com.electricalpanel.ElectricalPanel;
-import com.electricalpanel.EPBrand;
-
-import java.util.Arrays;
+import electricalpanel.ElectricalPanel;
+import electricalpanel.EPBrand;
 
 class EPClientArgs {
     public static void main(String[] args) {

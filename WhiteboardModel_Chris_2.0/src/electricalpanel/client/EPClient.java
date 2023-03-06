@@ -1,6 +1,6 @@
-package com.electricalpanel.client;
+package electricalpanel.client;
 
-import com.electricalpanel.*;
+import electricalpanel.*;
 
 class EPClient {
     public static void main(String[] args) {

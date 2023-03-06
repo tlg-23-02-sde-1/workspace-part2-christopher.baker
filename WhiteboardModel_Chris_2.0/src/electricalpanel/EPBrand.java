@@ -1,4 +1,4 @@
-package com.electricalpanel;
+package electricalpanel;
 
 public enum EPBrand {
     SIEMENS("Siemens"),

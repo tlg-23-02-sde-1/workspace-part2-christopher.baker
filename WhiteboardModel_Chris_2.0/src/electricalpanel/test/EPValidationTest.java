@@ -1,7 +1,7 @@
-package com.electricalpanel.test;
+package electricalpanel.test;
 
-import com.electricalpanel.EPBrand;
-import com.electricalpanel.ElectricalPanel;
+import electricalpanel.EPBrand;
+import electricalpanel.ElectricalPanel;
 
 class EPValidationTest {
     public static void main(String[] args) {
