@@ -13,7 +13,7 @@ public class ElectricalPanel {
     private boolean isOnePhase;
     private int numOfSlots;
     private boolean isEnergized;    //boolean default is false
-    private int serialNumber = 0;
+    private static int serialNumber = 0;
 
 
 
@@ -49,7 +49,7 @@ public class ElectricalPanel {
         isEnergized = energized;
     }
 
-    public int getSerialNumber() {
+    public static int getSerialNumber() {
         return serialNumber;
     }
 

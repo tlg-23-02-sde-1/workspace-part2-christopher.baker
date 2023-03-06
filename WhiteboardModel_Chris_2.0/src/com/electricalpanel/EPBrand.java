@@ -2,7 +2,7 @@ package com.electricalpanel;
 
 public enum EPBrand {
     SIEMENS("Siemens"),
-    SQUARE_E("Square D"),
+    SQUARE_D("Square D"),
     GE("General Electric");
 
     private String display;
