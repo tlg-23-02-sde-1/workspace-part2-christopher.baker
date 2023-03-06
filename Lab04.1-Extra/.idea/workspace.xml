@@ -2,48 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2cf7ad02-3fc1-467b-8873-20a0e0099533" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Lab03.2/Lab03.2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab03.2/test/com/javatunes/personnel/EmployeeTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab03.2/test/com/javatunes/personnel/HourlyEmployeeTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab03.2/test/com/javatunes/personnel/SalariedEmployeeTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab03.3/Lab03.3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab03.3/test/com/entertainment/TelevisionTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/javatunes/catalog/Catalog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/javatunes/catalog/InMemoryCatalog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/javatunes/catalog/MusicCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/javatunes/catalog/MusicItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/javatunes/catalog/test/InMemoryCatalogTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HeadFirstJava/HeadFirstJava.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HeadFirstJava/src/BottlesOfBeer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HeadFirstJava/src/DooBee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HeadFirstJava/src/PhaseOMatic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab05.1/Lab05.1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab05.2/Lab05.2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab05.3/Lab05.3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab05.3/src/com/javatunes/billing/TaxCalculatorFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WhiteboardModel_Chris_2.0/WhiteboardModel_Chris_2.0.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WhiteboardModel_Chris_2.0/src/ElectricalPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WhiteboardModel_Chris_2.0/src/ElectricalPanelBrand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WhiteboardModel_Chris_2.0/src/ElectricalPanelClientArgs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DuckRace/src/com/duckrace/DuckRacer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DuckRace/src/com/duckrace/DuckRacer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DuckRace/src/com/duckrace/DuckRacerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DuckRace/src/com/duckrace/DuckRacerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab01.2/src/com/entertainment/Television.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab01.2/src/com/entertainment/Television.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab01.2/src/com/entertainment/client/TelevisionClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab01.2/src/com/entertainment/client/TelevisionClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab01.2/src/com/entertainment/client/TelevisionTestSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab01.2/src/com/entertainment/client/TelevisionTestSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab03.2/src/com/javatunes/corp/Corporation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab03.2/src/com/javatunes/corp/Corporation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab03.2/src/com/javatunes/corp/client/TaxClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab03.2/src/com/javatunes/corp/client/TaxClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab03.2/src/com/javatunes/personnel/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab03.2/src/com/javatunes/personnel/Department.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab03.2/src/com/javatunes/personnel/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab03.2/src/com/javatunes/personnel/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab03.2/src/com/javatunes/personnel/HourlyEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab03.2/src/com/javatunes/personnel/HourlyEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab03.2/src/com/javatunes/personnel/SalariedEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab03.2/src/com/javatunes/personnel/SalariedEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab03.2/src/com/javatunes/personnel/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab03.2/src/com/javatunes/personnel/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab03.2/src/gov/irs/IRS.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab03.2/src/gov/irs/IRS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab03.2/src/gov/irs/NamedEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab03.2/src/gov/irs/NamedEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab03.2/src/gov/irs/TaxPayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab03.2/src/gov/irs/TaxPayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab03.3/src/com/entertainment/Television.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab03.3/src/com/entertainment/Television.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab04.1-Extra.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab04.1/Lab04.1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab04.1/Lab04.1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab04.1/src/com/entertainment/DisplayType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab04.1/src/com/entertainment/DisplayType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab04.1/src/com/entertainment/InvalidChannelException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab04.1/src/com/entertainment/InvalidChannelException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab04.1/src/com/entertainment/Television.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab04.1/src/com/entertainment/Television.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab04.1/src/com/entertainment/TelevisionBrandChannelComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab04.1/src/com/entertainment/TelevisionBrandChannelComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab04.1/src/com/entertainment/TelevisionChannelComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab04.1/src/com/entertainment/TelevisionChannelComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab04.1/src/com/entertainment/Tuner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab04.1/src/com/entertainment/Tuner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab04.1/src/com/entertainment/catalog/Catalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab04.1/src/com/entertainment/catalog/Catalog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab04.1/test/com/entertainment/TelevisionBrandChannelComparatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab04.1/test/com/entertainment/TelevisionBrandChannelComparatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab04.1/test/com/entertainment/TelevisionChannelComparatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab04.1/test/com/entertainment/TelevisionChannelComparatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab04.1/test/com/entertainment/TelevisionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab04.1/test/com/entertainment/TelevisionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab04.1/test/com/entertainment/catalog/CatalogTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab04.1/test/com/entertainment/catalog/CatalogTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Scratch/src/com/crunch/RadishSortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Scratch/src/com/crunch/RadishSortTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab05.3/src/com/javatunes/billing/EuropeTax.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab05.3/src/com/javatunes/billing/EuropeTax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab05.3/src/com/javatunes/billing/OnlineTax.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab05.3/src/com/javatunes/billing/OnlineTax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab05.3/src/com/javatunes/billing/USATax.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab05.3/src/com/javatunes/billing/USATax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab05.3/src/com/javatunes/product/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab05.3/src/com/javatunes/product/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab05.3/test/com/javatunes/billing/EuropeTaxTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab05.3/test/com/javatunes/billing/EuropeTaxTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
