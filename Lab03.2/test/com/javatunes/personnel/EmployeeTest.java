@@ -25,8 +25,6 @@ public class EmployeeTest {
         };
     }
 
-
-
     @Test
     public void hashCode_shouldBeEqual_whenEqualObjects(){
         assertEquals(emp1.hashCode(), emp2.hashCode());
