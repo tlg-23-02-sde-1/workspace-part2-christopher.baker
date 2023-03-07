@@ -13,9 +13,19 @@ public class EmployeeTest {
 
     @Before
     public void setUp() throws Exception {
-        emp1 = new SalariedEmployee("Jack", Date.valueOf("2010-10-10"));
-        emp2 = new SalariedEmployee("Jack", Date.valueOf("2010-10-10"));
+        //emp1 = new DummyEmployee("Jack", Date.valueOf("2010-10-10"));
+        //emp2 = new DummyEmployee("Jack", Date.valueOf("2010-10-10"));
+        emp1 = new Employee("Jack", Date.valueOf("2010-10-10")) {
+            public double pay() {return 0;}
+            public double payTaxes() {return 0;}
+        };
+        emp2 = new Employee("Jack", Date.valueOf("2010-10-10")) {
+            public double pay() {return 0;}
+            public double payTaxes() {return 0;}
+        };
     }
+
+
 
     @Test
     public void hashCode_shouldBeEqual_whenEqualObjects(){
@@ -42,6 +52,13 @@ public class EmployeeTest {
     public void equals_shouldReturnTrue_allPropertiesSame(){
         assertEquals(emp1, emp2);       //for objects, equals() gets called
         assertTrue(emp1.equals(emp2));  //alternative assertion
+
+    }
+// NAMED MEMBER LEVEL INNER CLASS
+    private class DummyEmployee extends Employee{
+    public DummyEmployee(String name, Date hireDate) {super(name, hireDate);}
+    public double pay() {return 0;}
+    public double payTaxes() {return 0;}
 
     }
 }
